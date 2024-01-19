@@ -16,7 +16,7 @@ struct ContentView: View {
             Color(red: game.target.red, green: game.target.green, blue: game.target.blue)
             Text("R: ??? G: ??? B: ???")
             
-            Color(red: game.target.red, green: guess.green, blue: guess.blue)
+            Color(red: guess.red, green: guess.green, blue: guess.blue)
             Text(guess.intString())
             
             ColorSlider(value: $guess.red, trackColor: .red)
