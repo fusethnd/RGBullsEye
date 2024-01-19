@@ -15,15 +15,19 @@ struct ContentView: View {
         VStack {
             Color(red: game.target.red, green: game.target.green, blue: game.target.blue)
             Text("R: ??? G: ??? B: ???")
+            
             Color(red: game.target.red, green: guess.green, blue: guess.blue)
             Text(guess.intString())
+            
             ColorSlider(value: $guess.red, trackColor: .red)
             ColorSlider(value: $guess.green, trackColor: .green)
             ColorSlider(value: $guess.blue, trackColor: .blue)
+            
             Button("Hit Me!!!") {
                 showScore = true
                 game.check(guess: guess)
             }
+            
             .alert(isPresented: $showScore) {
                 Alert(
                     title: Text("Your Score"),
